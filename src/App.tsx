@@ -1,16 +1,14 @@
-import { Button, ButtonIncrement } from './components/Button';
+import { Home } from './pages/Home';
+import { NewRoom } from './pages/NewRoom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
-function App() {
+export function App() {
   return (
-    <div>
-      <div>
-        <Button>Entrar</Button>
-      </div>
-      <div>
-        <ButtonIncrement />
-      </div>
-    </div>
+    <>
+      <BrowserRouter>
+        <Route path="/" exact component={Home} />
+        <Route path="/rooms/new" component={NewRoom} />
+      </BrowserRouter>
+    </>
   );
 }
-
-export default App;
