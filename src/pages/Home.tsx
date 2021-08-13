@@ -1,9 +1,9 @@
 export Home() {
-    return (
-        <div>
-            <aside>
-                <img scr="{}" alt="" />       
-            </aside>
-        </div>
-    )
+  return (
+    <div>
+      <aside>
+        <img scr="{}" alt="" />
+      </aside>
+    </div>
+  )
 }
