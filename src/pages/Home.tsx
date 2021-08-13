@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router-dom';
 
-import illustratrionImg from '../assets/images/illustration.svg';
+import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
 import googleIconImg from '../assets/images/icon.svg';
 
@@ -20,7 +20,7 @@ export function Home() {
   return (
     <div id="page-auth">
       <aside>
-        <img src={illustratrionImg} alt="Ilustração simbolizando perguntas e respostas" />
+        <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
         <strong>Crie salas de Q&amp;A ao vivo</strong>
         <p>Tire suas dúvidas da sua audiência em tempo-real</p>
       </aside>
