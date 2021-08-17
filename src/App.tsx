@@ -1,5 +1,5 @@
 import { BrowserRouter, Route } from 'react-router-dom';
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 
 import { firebase, auth } from './services/firebase';
 
@@ -21,6 +21,8 @@ export const AuthContext = createContext({} as AuthContextType);
 
 export function App() {
   const [user, setUser] = useState<User>();
+
+ // useEffect // 01:20:06
 
   async function signInWithGoogle() {
     const provider = new firebase.auth.GoogleAuthProvider();
