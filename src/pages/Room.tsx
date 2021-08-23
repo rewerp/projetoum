@@ -11,6 +11,16 @@ import { useAuth } from '../hooks/useAuth';
 
 import '../styles/room.scss';
 
+type FirebaseQuestions = Record<string, {
+  author: {
+    name: string;
+    avatar: string;
+  }
+  content: string;
+  isHighlighted: boolean;
+  isAnswered: boolean;
+}>
+
 type RoomParams = {
   id: string;
 }
@@ -25,10 +35,19 @@ export function Room() {
     const roomRef = database.ref(`rooms/${roomId}`);
 
     roomRef.once('value', room => {
-      const parsedQuestion = Object.entries
-      console.log(room.val());
+      const databaseRoom = room.val();
+      const firebaseQuestions: FirebaseQuestions = databaseRoom.questions;
+      const parsedQuestion = Object.entries(firebaseQuestions).map(([key, value]) => {
+        return {
+          id: key,
+          content: value.content,
+          author: value.author,
+          isHighlighted: value.isHighlighted,
+          isAnswered: value.isAnswered,
+        }
+      })
     })
-  }, []);
+  }, [roomId]);
 
   async function handleSendQuestion(event: FormEvent) {
     event.preventDefault();
