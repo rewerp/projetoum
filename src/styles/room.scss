@@ -59,6 +59,25 @@
         justify-content: space-between;
         align-items: center;
         margin-top: 16px;
+
+        .user-info {
+          display: flex;
+          align-items: center;
+  
+  
+          >img {
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+          }
+  
+          >span {
+            margin-left: 8px;
+            color: #29292e;
+            font-weight: 500;
+            font-size: 14px;
+          }
+        }
         
         span {
           font-size: 14px;
