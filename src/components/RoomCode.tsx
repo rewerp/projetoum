@@ -9,6 +9,11 @@ type RoomCodeProps = {
 export function RoomCode(props: RoomCodeProps) {
   function copyRoomCodeToClipBoard() {
     navigator.clipboard.writeText(props.code)
+    copyRoomCodeAlert();
+  }
+
+  function copyRoomCodeAlert() { //Código de minha autoria!
+    alert('Código copiado!')  
   }
 
   return (
